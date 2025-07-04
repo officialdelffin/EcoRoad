@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">EcoRoad</string>
+
+    <!-- Login Activity -->
+
+    <!-- explicações -->
+    <string name="login_titulo_boas_vindas"><b>Bem-vindo ao EcoRoad!</b></string>
+    <string name="login_explicacao_do_app">Calcule o custo da sua viagem de forma rápida e prática. Informe o tipo de combustível, a distância e o consumo do seu veículo para saber o valor total e a quantidade de litros necessários.
+Faça login com seu e-mail e senha para começar.</string>
+
+    <!-- hist -->
+    <string name="login_hint_email">Digite o seu email:</string>
+    <string name="login_hint_senha">Digite a sua senha:</string>
+
+    <!-- botões -->
+    <string name="login_botão_entrar"><b>ENTRAR</b></string>
+
+    <!-- criar conta / esqueci senha -->
+
+    <string name="login_criar_conta"><b>criar conta</b></string>
+    <string name="login_esqueci_senha"><b>esqueci senha</b></string>
+
+    <!-- Escolha combustível -->
+
+    <!-- explicação -->
+    <string name="escolha_titulo"><b>Escolha o combustível</b></string>
+    <string name="escolha_explicacao">Selecione o tipo de combustível que você vai utilizar na sua viagem. Essa escolha é importante para que o EcoRoad calcule corretamente o custo total e a quantidade necessária de litros para o percurso.</string>
+
+    <!-- botões -->
+    <string name="escolha_buttom_gosolina"><b>Gasolina</b></string>
+    <string name="escolha_buttom_diesel"><b>Diesel</b></string>
+    <string name="escolha_buttom_alcool"><b>Álcool</b></string>
+
+    <!-- texto clicavel -->
+    <string name="escolha_texto_clicavel_proximo"><b>Próximo</b></string>
+
+    <!-- Entrada Resultado Activity -->
+
+    <!-- titulo caixas de resultado -->
+    <string name="entrada_titulo_valor_necessario"><b>Valor necessário</b></string>
+    <string name="entrada_titulo_combustivel_necessario"><b>Combustível necessário</b></string>
+
+    <!-- resultados -->
+    <string name="entrada_simbolo_reais"><b>R$</b></string>
+    <string name="entrada_simbolo_litros"><b>L</b></string>
+    <string name="entrada_resultado_valor_necessario"><b>0000.00</b></string>
+    <string name="entrada_resultado_combustivel_necessario"><b>0000.00</b></string>
+    <string name="entrada_tipo_combustivel_gasolina"><b>GASOLINA</b></string>
+    <string name="entrada_tipo_combustivel_diesel"><b>DIESE</b></string>
+    <string name="entrada_tipo_combustivel_alcool"><b>ALCOOL</b></string>
+
+    <!-- texto de explicacao -->
+    <string name="entrada_titulo_explicacao"><b>Preencha os dados para calcular sua viagem</b></string>
+    <string name="entrada_explicacao">Informe o consumo do seu veículo (km por litro), a distância que deseja percorrer e o valor do combustível por litro. Com esses dados, o EcoRoad calculará automaticamente o custo total da viagem e quantos litros você vai precisar.</string>
+
+    <!-- hints -->
+    <string name="entrada_hint_consumo">Digite o consumo por litro: ex 12.0</string>
+    <string name="entrada_hint_distancia">Digite a distância: ex 130.5</string>
+    <string name="entrada_hint_preco">Digite o preço do combustível: ex 5.80</string>
+
+    <!-- botoes -->
+    <string name="entrada_botao_tipo_combustivel"><b>Mudar</b></string>
+    <string name="entrada_botao_calcular"><b>Calcular</b></string>
+</resources>

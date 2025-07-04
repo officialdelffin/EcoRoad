@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:contentDescription="Nessa tela é possivel rolar para ver mais informações"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageBackgrounLogin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageLogoEcoRoad"
+            app:srcCompat="@drawable/backgroud_login" />
+
+        <ImageView
+            android:id="@+id/imageLogoEcoRoad"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/image_logo_ecoroad" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/caixaEntradaEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="@string/login_hint_email"
+            android:textColorHint="@color/orange"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textoBreveExplicacaoApp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editEntradaEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/caixaEntradaSenha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/login_hint_senha"
+            android:orientation="horizontal"
+            android:textColorHint="@color/orange"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/caixaEntradaEmail"
+            app:layout_constraintStart_toStartOf="@+id/caixaEntradaEmail"
+            app:layout_constraintTop_toBottomOf="@+id/caixaEntradaEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editEntradaSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/botaoEntrar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/background_buttom_orange"
+            android:text="@string/login_botão_entrar"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/caixaEntradaSenha"
+            app:layout_constraintStart_toStartOf="@+id/caixaEntradaSenha"
+            app:layout_constraintTop_toBottomOf="@+id/caixaEntradaSenha" />
+
+        <TextView
+            android:id="@+id/textoTituloBoasVindas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/login_titulo_boas_vindas"
+            android:textColor="@color/orange"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageBackgrounLogin" />
+
+        <TextView
+            android:id="@+id/textoBreveExplicacaoApp"
+            android:layout_width="0dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/login_explicacao_do_app"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textoTituloBoasVindas" />
+
+        <TextView
+            android:id="@+id/textoClicavelCriarConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/login_criar_conta"
+            android:textColor="@color/reddish_orange"
+            app:layout_constraintStart_toStartOf="@+id/botaoEntrar"
+            app:layout_constraintTop_toBottomOf="@+id/botaoEntrar" />
+
+        <TextView
+            android:id="@+id/textoClicavelEsqueciSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/login_esqueci_senha"
+            android:textColor="@color/reddish_orange"
+            app:layout_constraintEnd_toEndOf="@+id/botaoEntrar"
+            app:layout_constraintTop_toBottomOf="@+id/botaoEntrar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

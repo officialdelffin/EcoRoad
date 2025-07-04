@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".EntradaResultadosActivity">
+
+    <ImageView
+        android:id="@+id/imagemBackgroundEntrada"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/backgroud_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagemBackgroundGeral" />
+
+    <ImageView
+        android:id="@+id/imagemBackgroundGeral"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/background_buttom_dark_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagemLogoEntrada" />
+
+    <ImageView
+        android:id="@+id/imagemResultadoValor"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/background_resultado_maquina"
+        app:layout_constraintStart_toStartOf="@+id/textoTituloValor"
+        app:layout_constraintTop_toBottomOf="@+id/textoTituloValor" />
+
+    <ImageView
+        android:id="@+id/imagemResultadoCombustivel"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/background_resultado_maquina"
+        app:layout_constraintEnd_toEndOf="@+id/imagemBackgroundGeral"
+        app:layout_constraintTop_toBottomOf="@+id/textoTituloCombustivel" />
+
+    <ImageView
+        android:id="@+id/imagemLogoEntrada"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:src="@drawable/image_logo_ecoroad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/imagemBackgroundGeral"
+        app:layout_constraintStart_toStartOf="@+id/imagemBackgroundGeral"
+        app:layout_constraintTop_toBottomOf="@+id/imagemResultadoValor"
+        app:srcCompat="@drawable/background_resultado_maquina" />
+
+    <TextView
+        android:id="@+id/textoTituloCombustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/entrada_titulo_combustivel_necessario"
+        android:textColor="@color/orange"
+        app:layout_constraintStart_toStartOf="@+id/imagemResultadoCombustivel"
+        app:layout_constraintTop_toTopOf="@+id/imagemBackgroundGeral" />
+
+    <TextView
+        android:id="@+id/textoTituloValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/entrada_titulo_valor_necessario"
+        android:textColor="@color/orange"
+        app:layout_constraintStart_toStartOf="@+id/imagemBackgroundGeral"
+        app:layout_constraintTop_toTopOf="@+id/imagemBackgroundGeral" />
+
+    <TextView
+        android:id="@+id/textoResultadoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/entrada_resultado_valor_necessario"
+        android:textColor="@color/dark_green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imagemResultadoValor"
+        app:layout_constraintEnd_toEndOf="@+id/imagemResultadoValor"
+        app:layout_constraintTop_toTopOf="@+id/imagemResultadoValor" />
+
+    <TextView
+        android:id="@+id/textoResultadoCombustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/entrada_resultado_combustivel_necessario"
+        android:textColor="@color/dark_green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imagemResultadoCombustivel"
+        app:layout_constraintEnd_toEndOf="@+id/imagemResultadoCombustivel"
+        app:layout_constraintTop_toTopOf="@+id/imagemResultadoCombustivel" />
+
+    <TextView
+        android:id="@+id/textoTituloPreencherDados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/entrada_titulo_explicacao"
+        android:textColor="@color/orange"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imagemBackgroundEntrada"
+        app:layout_constraintTop_toTopOf="@+id/imagemBackgroundEntrada" />
+
+    <TextView
+        android:id="@+id/textoExplicacaoEntrada"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/entrada_explicacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textoTituloPreencherDados"
+        app:layout_constraintTop_toBottomOf="@+id/textoTituloPreencherDados" />
+
+    <TextView
+        android:id="@+id/textoTipoCombustivel"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dark_green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/botaoTipoCombustivel"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/simboloReais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/entrada_simbolo_reais"
+        android:textColor="@color/dark_green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imagemResultadoValor"
+        app:layout_constraintStart_toStartOf="@+id/imagemResultadoValor"
+        app:layout_constraintTop_toTopOf="@+id/imagemResultadoValor" />
+
+    <TextView
+        android:id="@+id/simboloLitros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/entrada_simbolo_litros"
+        android:textColor="@color/dark_green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imagemResultadoCombustivel"
+        app:layout_constraintStart_toStartOf="@+id/imagemResultadoCombustivel"
+        app:layout_constraintTop_toTopOf="@+id/imagemResultadoCombustivel" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/caixaEntradaConsumo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/entrada_hint_consumo"
+        android:textColorHint="@color/orange"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoExplicacaoEntrada">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEntradaConsumo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/caixaEntradaDistancia"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:textColorHint="@color/orange"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/dark_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caixaEntradaConsumo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEntradaDistancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/entrada_hint_distancia"
+            android:inputType="number|numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/caixaEntradaPreco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/entrada_hint_preco"
+        android:textColorHint="@color/orange"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caixaEntradaDistancia">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEntradaPreco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botaoTipoCombustivel"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/background_buttom_reddshi_orange"
+        android:text="@string/entrada_botao_tipo_combustivel"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botaoCalcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/background_buttom_orange"
+        android:text="@string/entrada_botao_calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caixaEntradaPreco" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

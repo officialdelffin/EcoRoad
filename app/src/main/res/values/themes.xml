@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EcoRoad" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:navigationBarColor">@color/dark_gray</item>
+        <item name="android:statusBarColor">@color/gray</item>
+        <item name="android:colorBackground">@color/gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/reddish_orange</item>
+        <item name="colorSecondary">@color/gray</item>
+        <item name="colorSecondaryVariant">@color/dark_gray</item>
+
+    </style>
+
+    <style name="Theme.EcoRoad" parent="Base.Theme.EcoRoad" />
+</resources>

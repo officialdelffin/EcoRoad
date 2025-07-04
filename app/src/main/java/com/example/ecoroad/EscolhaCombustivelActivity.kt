@@ -12,10 +12,12 @@ import androidx.core.view.WindowInsetsControllerCompat
 
 class EscolhaCombustivelActivity : AppCompatActivity() {
 
+    // Definindo o tipo dos elementos :
     lateinit var botaoGasolina : AppCompatButton
     lateinit var botaoDiesel   : AppCompatButton
     lateinit var botaoAlccol   : AppCompatButton
 
+    // Função onCreate :
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -24,19 +26,22 @@ class EscolhaCombustivelActivity : AppCompatActivity() {
         window.navigationBarColor = getColor(R.color.dark_gray)
         WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightNavigationBars = false
 
+        // Chamada da função que vincula os elementos :
         inicializarComponentes()
 
+        // Chamando funções dos botões ao clicar :
         botaoGasolina.setOnClickListener  { abrirEntradaComGasolina() }
         botaoDiesel.setOnClickListener    { abrirEntradaComDiesel() }
         botaoAlccol.setOnClickListener { abrirEntradaComAlcool() }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
     }
 
+    // Função que inicializa e vincula os elementos :
     private fun inicializarComponentes() {
 
         botaoGasolina = findViewById(R.id.botaoGasolina)
@@ -45,6 +50,7 @@ class EscolhaCombustivelActivity : AppCompatActivity() {
 
     }
 
+    // Função que abre a activity com escolha gasolina :
     private fun abrirEntradaComGasolina()
     {
         var caminhoEntradaGasolina = Intent (this, EntradaResultadosActivity :: class.java )
@@ -68,5 +74,4 @@ class EscolhaCombustivelActivity : AppCompatActivity() {
         startActivity(caminhoEntradaAlcool)
 
     }
-
 }

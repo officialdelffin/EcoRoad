@@ -15,6 +15,7 @@ import android.graphics.Typeface
 
 class EntradaResultadosActivity : AppCompatActivity() {
 
+    // Definindo elementos:
     lateinit var caixaEntradaConsumo    : TextInputLayout
     lateinit var caixaEntradaDistancia  : TextInputLayout
     lateinit var caixaEntradaPreco      : TextInputLayout
@@ -30,37 +31,43 @@ class EntradaResultadosActivity : AppCompatActivity() {
     lateinit var botaoTipoCombustivel : AppCompatButton
     lateinit var botaoCalcular        : AppCompatButton
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    // Função onCreate:
+    override fun onCreate( savedInstanceState: Bundle? ) {
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_entrada_resultados)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.navigationBarColor = getColor(R.color.dark_gray)
-        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightNavigationBars = false
+        super.onCreate( savedInstanceState )
+        setContentView( R.layout.activity_entrada_resultados )
+        WindowCompat.setDecorFitsSystemWindows( window, false )
+        window.navigationBarColor = getColor( R.color.dark_gray )
+        WindowInsetsControllerCompat( window, window.decorView ).isAppearanceLightNavigationBars = false
 
+        // Chamada da função que vincula os elementos :
         inicializarComponentes()
 
+        // Recenbendo informações do intent :
         val escolhaCombustivel = intent.extras
 
+        // Checagem :
         if ( escolhaCombustivel != null ) {
 
-            val combustivel = escolhaCombustivel.getString("Combustivel")
+            val combustivel = escolhaCombustivel.getString( "Combustivel" )
 
-            when (combustivel) {
+            // Mostrar o tipo do combustível com base na escolha :
+            when ( combustivel ) {
 
                 "Gasolina" -> textoTipoCombustivel.text = getString(R.string.entrada_tipo_combustivel_gasolina)
                 "Diesel"   -> textoTipoCombustivel.text = getString(R.string.entrada_tipo_combustivel_diesel)
                 "Alcool"   -> textoTipoCombustivel.text = getString(R.string.entrada_tipo_combustivel_alcool)
 
             }
-
         }
 
+        // Botao que volta a escolha do combustível :
         botaoTipoCombustivel.setOnClickListener { finish() }
 
-        botaoCalcular.setOnClickListener{
+        // Botao que calcula os valores :
+        botaoCalcular.setOnClickListener {
 
-
+            // Armazenando elementos dentros das variaveis :
             var consumoInicial   = editEntradaConsumo.text.toString().toFloat()
             var distanciaInicial = editEntradaDistancia.text.toString().toFloat()
             var precoInicial     = editEntradaPreco.text.toString().toFloat()
@@ -76,27 +83,34 @@ class EntradaResultadosActivity : AppCompatActivity() {
         }
     }
 
+    // Função que inicializa os elementos :
     private fun inicializarComponentes() {
 
+        // Caixas entrada:
         caixaEntradaConsumo    = findViewById(R.id.caixaEntradaConsumo)
         caixaEntradaDistancia  = findViewById(R.id.caixaEntradaDistancia)
         caixaEntradaPreco      = findViewById(R.id.caixaEntradaPreco)
 
+        // Caixas de edição :
         editEntradaConsumo    = findViewById(R.id.editEntradaConsumo)
         editEntradaDistancia  = findViewById(R.id.editEntradaDistancia)
         editEntradaPreco      = findViewById(R.id.editEntradaPreco)
 
+        // Textos manipulaveis :
         textoResultadoValor        = findViewById(R.id.textoResultadoValor)
         textoResultadoCombustivel  = findViewById(R.id.textoResultadoCombustivel)
         textoTipoCombustivel       = findViewById(R.id.textoTipoCombustivel)
 
+        // Botões :
         botaoTipoCombustivel  = findViewById(R.id.botaoTipoCombustivel)
         botaoCalcular         = findViewById(R.id.botaoCalcular)
 
     }
 
+    // Função que verfica se as caixas estão vazias :
     private fun checagemCaixasEntradas () : Boolean {
 
+        // Armazenando elementos dentro das variaveis :
         var checagemConsumo    = editEntradaConsumo.text.toString()
         var checagemDistancia  = editEntradaDistancia.text.toString()
         var checagemPreco      = editEntradaPreco.text.toString()
@@ -126,24 +140,29 @@ class EntradaResultadosActivity : AppCompatActivity() {
 
         }
 
+        // Se a checagem foi aprovada retorna um true :
         return true
 
     }
 
+    // Função que calcula e exibe os resultados :
     private fun calcularExibir ( consumoP : Float , distanciaP : Float , precoP : Float ) {
 
+        // Se a checagem for aprovada :
         if ( checagemCaixasEntradas() ) {
 
+            // Armazenados os parametros dentro das variaveis :
             var consumo = consumoP
             var distancia = distanciaP
             var preco = precoP
 
+            // Calcula e armazena os resultados :
             var combustivelNecessario = distancia / consumo
             var valorNecessario = combustivelNecessario * preco
 
+            // Exibe os resultados na tela :
             textoResultadoValor.text = "%.2f".format(valorNecessario)
             textoResultadoCombustivel.text = "%.2f".format(combustivelNecessario)
-
 
         }
     }

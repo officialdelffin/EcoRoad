@@ -17,11 +17,9 @@ import com.google.android.material.textfield.TextInputLayout
 
 class LoginActivity : AppCompatActivity() {
 
-
     // Email e senha para acesso:
     val emailAcesso = "ecoroadacesso@gmail.com"
     val senhaAcesso = "ecoroadacesso123"
-
 
     // Definindo tipos de elementos:
 
@@ -38,20 +36,23 @@ class LoginActivity : AppCompatActivity() {
     // botões
     lateinit var botaoEntrar : AppCompatButton
 
+    // Função onCreate :
+    override fun onCreate( savedInstanceState: Bundle? ) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate( savedInstanceState )
+        setContentView( R.layout.activity_login )
+        WindowCompat.setDecorFitsSystemWindows( window, false )
+        window.navigationBarColor = getColor( R.color.dark_gray )
+        WindowInsetsControllerCompat( window, window.decorView ).isAppearanceLightNavigationBars = false
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-
-        window.navigationBarColor = getColor(R.color.dark_gray)
-        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightNavigationBars = false
-
+        // Chamada da função que vincula os elementos :
         inicializarComponentes()
+
+        // Chamada do botao entrar ao clicar :
         botaoEntrar.setOnClickListener { abrirActivity() }
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+        ViewCompat.setOnApplyWindowInsetsListener( findViewById(R.id.main )) { v, insets ->
+            val systemBars = insets.getInsets( WindowInsetsCompat.Type.systemBars() )
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
@@ -76,46 +77,45 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-
     // Função de entrada para outra activity :
     private fun abrirActivity () {
 
-        // definindo que o erro começa nulo
         caixaEntradaEmail.error = null
         caixaEntradaSenha.error = null
 
-        // caso a caixa de entrada estiver vazia
+        // Caso a caixa de entrada estiver vazia :
         if ( caixaEntradaEmail.isEmpty() ){
 
             caixaEntradaEmail.error = "Digite o email para a verificação!"
 
         }
 
-        // caso a caixa de entrada estiver vazia
+        // Caso a caixa de entrada estiver vazia :
         else if ( caixaEntradaSenha.isEmpty() ){
 
             caixaEntradaSenha.error = "Digite a senha para a verificação!"
 
         }
 
-            // Se o email e senha estiverem corretos :
-            if ( editEntradaEmail.text.toString() == emailAcesso || editEntradaSenha.text.toString() == senhaAcesso ) {
+        // Se o email e senha estiverem corretos :
+        if ( editEntradaEmail.text.toString() == emailAcesso || editEntradaSenha.text.toString() == senhaAcesso ) {
 
-                var caminhoEscolhaCombustivel = Intent( this,EscolhaCombustivelActivity :: class.java )
-                startActivity(caminhoEscolhaCombustivel)
-                finish()
+            var caminhoEscolhaCombustivel = Intent( this,EscolhaCombustivelActivity :: class.java )
+            startActivity(caminhoEscolhaCombustivel)
+            finish()
 
-            }
+        }
 
-            // Se o email e senha estiverem errados
-            else {
+        // Se o email e senha estiverem errados
+        else {
 
-                AlertDialog.Builder(this)
-                    .setTitle("Erro no login")
-                    .setMessage("Por favor, preencha todos os campos obrigatórios para continuar. Verifique se você digitou corretamente o e-mail e a senha.")
-                    .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-                    .show()
+            AlertDialog.Builder(this)
 
-            }
+                .setTitle("Erro no login")
+                .setMessage("Por favor, preencha todos os campos obrigatórios para continuar. Verifique se você digitou corretamente o e-mail e a senha.")
+                .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                .show()
+
+        }
     }
 }
